@@ -33,7 +33,9 @@ public class OrderCalculator
 
 	private BigDecimal addOrderItem(BigDecimal total, OrderItem item)
 	{
-		total = total.add(new BigDecimal(item.getProduct().getPrice()));
+		float productPrice = item.getProduct().getPrice();
+		float totalPrice = item.getCount()*productPrice;
+		total = total.add(new BigDecimal(totalPrice));
 		return total;
 	}
 }

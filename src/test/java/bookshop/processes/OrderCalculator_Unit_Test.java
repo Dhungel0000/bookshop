@@ -27,7 +27,7 @@ public class OrderCalculator_Unit_Test
 
 		whenTotalCaculated(order);
 
-		assertThat(total, is("2"));
+		assertThat(total, is("2.00"));
 	}
 
 	private void whenTotalCaculated(Order order)
@@ -64,4 +64,16 @@ public class OrderCalculator_Unit_Test
 	{
 		fail("Not implemented, yet.");
 	}
+
+	@Test
+	public void calcTotalSingleItemTwoTimes()
+	{
+		Order order = new Order();
+		order.addItem(new OrderItem(THE_2EUR_BOOK, 2));
+
+		whenTotalCaculated(order);
+
+		assertThat(total, is("4.00"));
+	}
+
 }
