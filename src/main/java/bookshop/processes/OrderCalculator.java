@@ -4,6 +4,7 @@ import bookshop.model.Order;
 import bookshop.model.OrderItem;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class OrderCalculator
 {
@@ -26,7 +27,7 @@ public class OrderCalculator
 		{
 			throw new UnsupportedOperationException("Cannot process order with more than 4 items.");
 		}
-
+		total=total.setScale(2, RoundingMode.HALF_UP);
 		return total.toString();
 	}
 

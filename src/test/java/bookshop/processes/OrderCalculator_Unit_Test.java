@@ -12,7 +12,7 @@ import static org.junit.Assert.fail;
 public class OrderCalculator_Unit_Test
 {
 	private static final Product THE_2EUR_BOOK = new Product("The EUR 2 book", "2.0");
-	private static final Product THE_50CT_BOOK = new Product("The 50ct book", "0.33");
+	private static final Product THE_50CT_BOOK = new Product("The 50ct book", "0.50");
 	private static final Product THE_33CT_BOOK = new Product("The 0.33ct book", "0.33");
 
 	private final OrderCalculator orderCalculator = new OrderCalculator();
@@ -44,7 +44,7 @@ public class OrderCalculator_Unit_Test
 
 		String total = orderCalculator.getTotalFor(order);
 
-		assertThat(total, is("0.88"));
+		assertThat(total, is("0.83"));
 	}
 
 	@Test
